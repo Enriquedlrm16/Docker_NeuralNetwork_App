@@ -45,7 +45,7 @@ This repository joins all the code employed for constructing a Shiny App control
 
 > wget https://cran.r-project.org/src/contrib/Archive/Seurat/Seurat_4.0.3.tar.gz
 
-> 
+> wget https://cran.r-project.org/src/contrib/Archive/Shiny_1.6.0.tar.gz
 
 ### Access to R to install all packages and their dependencies
 > /usr/local/lib/R/bin/R
