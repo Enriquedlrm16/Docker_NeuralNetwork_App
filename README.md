@@ -85,7 +85,7 @@ NOTE: Python version was forced by import("tensorflow")
 
 
 ## Terminal 2
-### In case of some modifications in previous containers (cause we are manipulating the docker inside this docker 
+### In case of some modifications in previous containers (cause we are manipulating the docker from inside) 
 > sudo docker ps -a
 
 detect the container ID that contains your image and then save it in other container named 'my_nn_app_shiny_updated': 
