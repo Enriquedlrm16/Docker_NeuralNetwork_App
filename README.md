@@ -13,9 +13,9 @@ This repository joins all the code employed for constructing a Shiny App control
 
 
 ## Terminal 
-> sudo docker build -t my_shiny_app_image .
+> sudo docker build -t my_nn_app_shiny .
 
-> sudo docker run -p 1272:1272 my_shiny_app_image
+> sudo docker run -it my_nn_app_shiny /bin/bash
 
 
 ### As a root... inside the docker
@@ -50,13 +50,28 @@ This repository joins all the code employed for constructing a Shiny App control
 ### Access to R to install all packages and their dependencies
 > /usr/local/lib/R/bin/R
 
-> 
+> install.packages('igraph', version = '1.2.6')
+
+> install.packages('tensorflow', version = '2.13')
+
+> install.packages('reticulate', version = '1.30.0')
+
+> reticulate::install_python(version = '3.8')
+
+> tensorflow::install_tensorflow(version = '2.13.0')
+
+> reticulate::py_config()
+
+python:         /root/.virtualenvs/r-tensorflow/bin/python
+libpython:      /root/.pyenv/versions/3.8.18/lib/libpython3.8.so
+pythonhome:     /root/.virtualenvs/r-tensorflow:/root/.virtualenvs/r-tensorflow
+version:        3.8.18 (default, Feb  5 2024, 16:05:15)  [GCC 9.4.0]
+numpy:          /root/.virtualenvs/r-tensorflow/lib/python3.8/site-packages/numpy
+numpy_version:  1.24.3
+tensorflow:     /root/.virtualenvs/r-tensorflow/lib/python3.8/site-packages/tensorflow
+
+NOTE: Python version was forced by import("tensorflow")
 
 >
 
->
-
->
-
->
 
