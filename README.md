@@ -4,11 +4,15 @@ This repository joins all the code employed for constructing a Shiny App control
 
 ## Dockerfile
 > FROM ubuntu:20.04
+
 > WORKDIR /app
+
 > COPY . /app
+
 > CMD ["bin/bash"]
 
 
 ## Terminal 
 > sudo docker build -t my_shiny_app_image .
+
 > sudo docker run -p 1272:1272 my_shiny_app_image
