@@ -63,11 +63,16 @@ This repository joins all the code employed for constructing a Shiny App control
 > reticulate::py_config()
 
 python:         /root/.virtualenvs/r-tensorflow/bin/python
+
 libpython:      /root/.pyenv/versions/3.8.18/lib/libpython3.8.so
+
 pythonhome:     /root/.virtualenvs/r-tensorflow:/root/.virtualenvs/r-tensorflow
+
 version:        3.8.18 (default, Feb  5 2024, 16:05:15)  [GCC 9.4.0]
+
 numpy:          /root/.virtualenvs/r-tensorflow/lib/python3.8/site-packages/numpy
 numpy_version:  1.24.3
+
 tensorflow:     /root/.virtualenvs/r-tensorflow/lib/python3.8/site-packages/tensorflow
 
 NOTE: Python version was forced by import("tensorflow")
