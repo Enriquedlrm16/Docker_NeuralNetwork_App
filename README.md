@@ -12,7 +12,7 @@ This repository joins all the code employed for constructing a Shiny App control
 > CMD ["bin/bash"]
 
 
-## Terminal 
+## Terminal 1
 > sudo docker build -t my_nn_app_shiny .
 
 > sudo docker run -it my_nn_app_shiny /bin/bash
@@ -77,6 +77,41 @@ tensorflow:     /root/.virtualenvs/r-tensorflow/lib/python3.8/site-packages/tens
 
 NOTE: Python version was forced by import("tensorflow")
 
->
+> install.packages('keras', version = '2.13.0')
+
+> install.packages('rmarkdown', version = '2.16')
+
+> install.packages('the rest of necessary packages', version = '')
+
+
+## Terminal 2
+### In case of some modifications in previous containers (cause we are manipulating the docker inside this docker 
+> sudo docker ps -a
+
+detect the container ID that contains your image and then save it in other container named 'my_nn_app_shiny_updated': 
+
+> sudo docker commit c933e8051722 my_nn_app_shiny_updated
+
+clean the exited containers with: 
+
+> sudo docker container prune
+
+... and save docker if you want: 
+
+> sudo docker save -o nn_shiny_app_docker.tar my_nn_app_shiny_updated
+
+... If you want to upload files for your app from the local computer to 
+
+> sudo docker cp /home/enrique/neural_network_app my_nn_app_shiny_updated:app
+
+... In the dockerfile we did not expose it to a specific port, so you can test your docker with your App in a local host with: 
+
+> sudo docker run --network host -d -v /home/enrique/neural_network_app/mm_neural_network:/app my_updated_nn_app_v2 Rscript -e "shiny::runApp('/app/app.R')"
+
+... Finally, you can localize the port in which the App is running by testing the active internet conections of your computer:
+
+> sudo netstat -tuln
+
+
 
 
