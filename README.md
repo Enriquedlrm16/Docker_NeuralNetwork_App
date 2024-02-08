@@ -50,6 +50,12 @@ This repository joins all the code employed for constructing a Shiny App control
 ### Access to R to install all packages and their dependencies
 > /usr/local/lib/R/bin/R
 
+> install.packages("SeuratObject_4.0.2.tar.gz", repos = NULL, type = "source")
+
+> install.packages("Seurat_4.0.3.tar.gz", repos = NULL, type = "source")
+
+> install.packages("Shiny_1.6.0.tar.gz", repos = NULL, type = "source")
+
 > install.packages('igraph', version = '1.2.6')
 
 > install.packages('tensorflow', version = '2.13')
