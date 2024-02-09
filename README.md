@@ -110,6 +110,10 @@ clean the exited containers with:
 
 > sudo chown new_owner:new_owner nn_shiny_app_docker.tar
 
+... to upload your docker image: 
+
+> sudo docker load -i nn_shiny_app_docker.tar
+
 ... If you want to upload files for your app from the local computer to 
 
 > sudo docker cp /home/enrique/neural_network_app my_nn_app_shiny_updated:app
