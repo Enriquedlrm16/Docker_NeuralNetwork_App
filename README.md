@@ -21,7 +21,7 @@ This repository joins all the code employed for constructing a Shiny App control
 ### As a root... inside the docker
 > apt-get update
 
-> apt-get install -y g++ gfortran libreadline6-dev libx11-dev libxt-dev libpng-dev libjpeg-dev libcairo2-dev xvfb libbz2-dev libzstd-dev liblzma-dev libcurl4-openssl-dev texinfo texlive texlive-fonts-extra screen wget libpcre2-dev zlib1g-dev libbz2-dev liblzma-dev libpcre2-dev libcurl4-openssl-dev openjdk-11-jdk make libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev libc6-dev libharfbuzz-dev libfreetype6-dev libfribidi-dev libfftw3-dev nano build-essential git libxml2-dev libglpk-dev libhdf5-dev libgsl-dev
+> apt-get install -y g++ gfortran libreadline6-dev libx11-dev libxt-dev libpng-dev libjpeg-dev libcairo2-dev xvfb libbz2-dev libzstd-dev liblzma-dev libcurl4-openssl-dev texinfo texlive texlive-fonts-extra screen wget libpcre2-dev zlib1g-dev libbz2-dev liblzma-dev libpcre2-dev libcurl4-openssl-dev openjdk-11-jdk make libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev libc6-dev libharfbuzz-dev libfreetype6-dev libfribidi-dev libfftw3-dev nano build-essential git libxml2-dev libglpk-dev libhdf5-dev libgsl-dev links2
 
 > cd /usr/local/src
 
@@ -106,6 +106,10 @@ clean the exited containers with:
 
 > sudo docker save -o nn_shiny_app_docker.tar my_nn_app_shiny_updated
 
+... if you have troubles with the owner of the file, the you can run:
+
+> sudo chown new_owner:new_owner nn_shiny_app_docker.tar
+
 ... If you want to upload files for your app from the local computer to 
 
 > sudo docker cp /home/enrique/neural_network_app my_nn_app_shiny_updated:app
@@ -117,6 +121,14 @@ clean the exited containers with:
 ... Finally, you can localize the port in which the App is running by testing the active internet conections of your computer:
 
 > sudo netstat -tuln
+
+### If you want to share the app via shiny.io (create an account) then you would need to install and run in R (inside the container): 
+
+> install.packages('rsconnect')
+
+> rsconnect::setAccountInfo(name='', token='', secret='')
+
+> rsconnect::deployApp('/app/mm_neural_network/')
 
 
 
